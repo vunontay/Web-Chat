@@ -127,7 +127,11 @@ export const ConversationScreen: React.FC<ConversationScreenProps> = ({ conversa
                     <div className="flex items-center">
                         <RecipientAvatar recipient={recipient} recipientEmail={recipientEmail} />
                         <h3 className="ml-3 text-white text-xl">{recipientEmail}</h3>
-                        {recipient && <span>Last Active: {convertFirestoreTimestampToString(recipient.lastSeen)}</span>}
+                        {recipient && (
+                            <span className="ml-6 ">
+                                Last Active: {convertFirestoreTimestampToString(recipient.lastSeen)}
+                            </span>
+                        )}
                     </div>
                     <div className="flex items-center justify-between text-4xl cursor-pointer">
                         <span className="px-6 text-white">
